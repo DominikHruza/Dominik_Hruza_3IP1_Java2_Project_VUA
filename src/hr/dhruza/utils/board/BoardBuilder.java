@@ -1,6 +1,6 @@
 package hr.dhruza.utils.board;
 
-import hr.dhruza.GameContext;
+import hr.dhruza.model.GameContext;
 import hr.dhruza.model.Player;
 import hr.dhruza.model.PlayerColor;
 import javafx.geometry.Insets;
@@ -56,14 +56,14 @@ public abstract class BoardBuilder {
   }
 
   public void setupPlayers(HBox playerContainer) {
-    int numOfPlayersInGame = GameContext.getInstance().getPlayerCount().getCount();
+    int numOfPlayersInGame = GameContext.INSTANCE.getPlayerCount().getCount();
     for (int i = 1; i <= numOfPlayersInGame; i++) {
       Circle player = new Circle(9);
       PlayerColor playerColor = PlayerColor.fromId(i).get();
       player.fillProperty().set(playerColor.getColorValue());
       player.idProperty().set("player-" + i);
       playerContainer.getChildren().add(player);
-      GameContext.getInstance().addPlayer(new Player(i, "Player " + i, 1, playerColor));
+      GameContext.INSTANCE.addPlayer(new Player(i, "Player " + i, 1, playerColor));
     }
   }
 }

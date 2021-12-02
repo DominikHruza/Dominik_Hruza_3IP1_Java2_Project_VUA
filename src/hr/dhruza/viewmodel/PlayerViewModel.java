@@ -1,13 +1,13 @@
-package hr.dhruza.model.fx;
+package hr.dhruza.viewmodel;
 
 import hr.dhruza.model.Player;
 import hr.dhruza.model.PlayerColor;
 import javafx.beans.property.*;
 
-public class FxPlayer {
+public class PlayerViewModel {
   private final Player player;
 
-  public FxPlayer(Player player) {
+  public PlayerViewModel(Player player) {
     this.player = player;
   }
 

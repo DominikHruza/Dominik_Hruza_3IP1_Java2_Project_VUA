@@ -1,25 +1,16 @@
-package hr.dhruza;
-
-import hr.dhruza.model.Player;
-import hr.dhruza.model.PlayerCount;
+package hr.dhruza.model;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class GameContext {
-  private static GameContext instance;
+public enum GameContext {
+
+  INSTANCE();
+
   private PlayerCount playerCount = PlayerCount.TWO;
-  private final List<Player> players = new ArrayList<>();
+  private List<Player> players = new ArrayList<>();
   private Player activePlayer;
-
-  private GameContext() {}
-
-  public static GameContext getInstance() {
-    if (instance == null) {
-      instance = new GameContext();
-    }
-    return instance;
-  }
+  private int dieValue;
 
   public void nextPlayer(){
     int activeIndex = players.indexOf(this.activePlayer);
@@ -43,6 +34,9 @@ public class GameContext {
     return players;
   }
 
+  public void setPlayers(List<Player> players){
+    this.players = players;
+  }
   public void addPlayer(Player player) {
     this.players.add(player);
   }
@@ -53,5 +47,13 @@ public class GameContext {
 
   public void setActivePlayer(Player activePlayer) {
     this.activePlayer = activePlayer;
+  }
+
+  public int getDieValue() {
+    return dieValue;
+  }
+
+  public void setDieValue(int dieValue) {
+    this.dieValue = dieValue;
   }
 }

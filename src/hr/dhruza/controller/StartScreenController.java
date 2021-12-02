@@ -1,6 +1,6 @@
 package hr.dhruza.controller;
 
-import hr.dhruza.GameContext;
+import hr.dhruza.model.GameContext;
 import hr.dhruza.model.PlayerCount;
 import javafx.collections.FXCollections;
 import javafx.event.Event;
@@ -57,7 +57,7 @@ public class StartScreenController implements Initializable {
   void onPlayerCountSelectionChange() {
     PlayerCount playerCount =
         PlayerCount.fromName(cbPlayers.getSelectionModel().getSelectedItem()).get();
-    GameContext.getInstance().setPlayerCount(playerCount);
+    GameContext.INSTANCE.setPlayerCount(playerCount);
   }
 
   private void redirectToMainScreen(Event event) throws IOException {
@@ -66,10 +66,11 @@ public class StartScreenController implements Initializable {
     currentStage.close();
 
     FXMLLoader loader = new FXMLLoader(getClass().getResource("/hr/dhruza/view/MainScreen.fxml"));
+    loader.setController(new MainScreenController(event));
     Parent root = loader.load();
-
     Scene scene = new Scene(root);
     Stage stage = new Stage();
+
 
     stage.setTitle("Play!");
     stage.setScene(scene);

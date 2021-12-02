@@ -1,4 +1,4 @@
-package hr.dhruza.model.fx;
+package hr.dhruza.viewmodel;
 
 import hr.dhruza.utils.constants.DieConstants;
 import javafx.beans.property.IntegerProperty;
@@ -6,11 +6,11 @@ import javafx.beans.property.SimpleIntegerProperty;
 
 import java.util.Random;
 
-public class FxDie {
+public class DieViewModel {
 
   private final IntegerProperty value;
 
-  public FxDie() {
+  public DieViewModel() {
     this.value = new SimpleIntegerProperty();
   }
 

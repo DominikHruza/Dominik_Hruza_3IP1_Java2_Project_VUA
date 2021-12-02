@@ -1,11 +1,19 @@
 package hr.dhruza.model;
 
-public class Player {
+import java.io.Externalizable;
+import java.io.IOException;
+import java.io.ObjectInput;
+import java.io.ObjectOutput;
 
-  private final Integer id;
-  private final String name;
+public class Player implements Externalizable {
+  private final static long serialVersionUID = 1L;
+
+  private Integer id;
+  private String name;
   private Integer position;
-  private final PlayerColor color;
+  private PlayerColor color;
+
+  public Player() {}
 
   public Player(Integer id, String name, Integer position, PlayerColor color) {
     this.id = id;
@@ -32,5 +40,20 @@ public class Player {
 
   public PlayerColor getColor() {
     return color;
+  }
+
+  @Override
+  public void writeExternal(ObjectOutput out) throws IOException {
+    out.writeInt(id);
+    out.writeUTF(name);
+    out.writeInt(position);
+
+  }
+
+  @Override
+  public void readExternal(ObjectInput in) throws IOException, ClassNotFoundException {
+    this.id = in.readInt();
+    this.name = in.readUTF();
+    this.position = in.readInt();
   }
 }

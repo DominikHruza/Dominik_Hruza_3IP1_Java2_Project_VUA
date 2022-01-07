@@ -57,7 +57,7 @@ public abstract class BoardBuilder {
 
   public void setupPlayers(HBox playerContainer) {
     int numOfPlayersInGame = GameContext.INSTANCE.getPlayerCount().getCount();
-    for (int i = 1; i <= numOfPlayersInGame; i++) {
+    for (int i = 1; i <= 2; i++) {
       Circle player = new Circle(9);
       PlayerColor playerColor = PlayerColor.fromId(i).get();
       player.fillProperty().set(playerColor.getColorValue());

@@ -35,7 +35,7 @@
          <children>
             <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="0.0" minWidth="200.0" prefHeight="384.0" prefWidth="255.0">
                <children>
-                  <Button fx:id="btnRoll" layoutX="46.0" layoutY="284.0" mnemonicParsing="false" onAction="#onRollClick" prefHeight="63.0" prefWidth="105.0" text="Roll">
+                  <Button fx:id="btnRoll" layoutX="7.0" layoutY="297.0" mnemonicParsing="false" onAction="#onRollClick" prefHeight="50.0" prefWidth="200.0" text="Roll">
                      <font>
                         <Font size="22.0" />
                      </font>

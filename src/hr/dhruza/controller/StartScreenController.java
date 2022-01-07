@@ -12,6 +12,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -27,13 +28,15 @@ public class StartScreenController implements Initializable {
 
   @FXML private ComboBox<String> cbPlayers;
 
+  @FXML
+  private TextField tfPort;
+
   @Override
   public void initialize(URL location, ResourceBundle resources) {
     intComboBox();
   }
 
   private void intComboBox() {
-
     cbPlayers.setItems(
         FXCollections.observableArrayList(
             Arrays.asList(
@@ -54,6 +57,15 @@ public class StartScreenController implements Initializable {
   }
 
   @FXML
+  void onJoinButtonClick(Event event) {
+    try {
+      redirectToMainScreen(event);
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+  }
+
+  @FXML
   void onPlayerCountSelectionChange() {
     PlayerCount playerCount =
         PlayerCount.fromName(cbPlayers.getSelectionModel().getSelectedItem()).get();
@@ -66,11 +78,17 @@ public class StartScreenController implements Initializable {
     currentStage.close();
 
     FXMLLoader loader = new FXMLLoader(getClass().getResource("/hr/dhruza/view/MainScreen.fxml"));
-    loader.setController(new MainScreenController(event));
+
+    Button targetBtn = (Button) event.getTarget();
+    if(targetBtn.getId().equals("btnStart")){
+      loader.setController(new MainScreenServerController());
+    } else {
+      loader.setController(new MainScreenClientController());
+    }
+
     Parent root = loader.load();
     Scene scene = new Scene(root);
     Stage stage = new Stage();
-
 
     stage.setTitle("Play!");
     stage.setScene(scene);

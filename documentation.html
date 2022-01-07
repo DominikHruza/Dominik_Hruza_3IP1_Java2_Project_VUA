@@ -1,0 +1,131 @@
+<h1> Java 2 Game Project Documentation</h1>
+<h3>GameContext</h3>
+<p>package hr.dhruza.model</p>
+
+<p>public final</p><p> </p><p>GameContext</p><p>
+extends</p><p> </p><p>java.lang.Enum</p><p> </p><p>java.lang.Object</p>
+
+<h5>Fields:</h5>
+<p>public static final hr.dhruza.model.GameContext hr.dhruza.model.GameContext.INSTANCE</p>
+<p>private hr.dhruza.model.PlayerCount hr.dhruza.model.GameContext.playerCount</p>
+<p>private java.util.List hr.dhruza.model.GameContext.players</p>
+<p>private hr.dhruza.model.Player hr.dhruza.model.GameContext.activePlayer</p>
+<p>private int hr.dhruza.model.GameContext.dieValue</p>
+<p>private static final hr.dhruza.model.GameContext[] hr.dhruza.model.GameContext.$VALUES</p>
+<h5>Methods:</h5>
+
+<p>public static class [Lhr.dhruza.model.GameContext; values() </p><p></p>
+<p>public static class hr.dhruza.model.GameContext valueOf(java.lang.String arg0) </p><p></p>
+<p>public void setPlayerCount(hr.dhruza.model.PlayerCount arg0) </p><p></p>
+<p>public void setActivePlayer(hr.dhruza.model.Player arg0) </p><p></p>
+<p>public class hr.dhruza.model.Player getActivePlayer() </p><p></p>
+<p>public void setDieValue(int arg0) </p><p></p>
+<p>public void nextPlayer() </p><p></p>
+<p>public interface java.util.List getPlayers() </p><p></p>
+<p>public void setPlayers(java.util.List<hr.dhruza.model.Player> arg0) </p><p></p>
+<p>public int getDieValue() </p><p></p>
+<p>public class hr.dhruza.model.PlayerCount getPlayerCount() </p><p></p>
+<p>public void addPlayer(hr.dhruza.model.Player arg0) </p><p></p>
+<h5>Constructors:</h5>
+
+<p>private hr.dhruza.model.GameContext(java.lang.String arg0, int arg1)</p>
+
+<h3>GameContextSerializable</h3>
+<p>package hr.dhruza.model</p>
+
+<p>public</p><p> </p><p>GameContextSerializable</p><p>
+extends</p><p> </p><p>java.lang.Object</p><p>
+implements</p><p> </p><p>java.io.Externalizable</p>
+
+<h5>Fields:</h5>
+<p>private static final java.lang.Long hr.dhruza.model.GameContextSerializable.serialVersionUID</p>
+<p>private hr.dhruza.model.PlayerCount hr.dhruza.model.GameContextSerializable.playerCount</p>
+<p>private java.util.List hr.dhruza.model.GameContextSerializable.players</p>
+<p>private hr.dhruza.model.Player hr.dhruza.model.GameContextSerializable.activePlayer</p>
+<p>private int hr.dhruza.model.GameContextSerializable.dieValue</p>
+<h5>Methods:</h5>
+
+<p>public void writeExternal(java.io.ObjectOutput arg0)<p> throws </p><p>class java.io.IOException</p> </p><p></p>
+<p>public void readExternal(java.io.ObjectInput arg0)<p> throws </p><p>class java.io.IOException</p><p>class java.lang.ClassNotFoundException</p> </p><p></p>
+<p>public void loadToGlobalState() </p><p></p>
+<h5>Constructors:</h5>
+
+<p>public hr.dhruza.model.GameContextSerializable()</p>
+
+<h3>Player</h3>
+<p>package hr.dhruza.model</p>
+
+<p>public</p><p> </p><p>Player</p><p>
+extends</p><p> </p><p>java.lang.Object</p><p>
+implements</p><p> </p><p>java.io.Externalizable</p>
+
+<h5>Fields:</h5>
+<p>private static final long hr.dhruza.model.Player.serialVersionUID</p>
+<p>private java.lang.Integer hr.dhruza.model.Player.id</p>
+<p>private java.lang.String hr.dhruza.model.Player.name</p>
+<p>private java.lang.Integer hr.dhruza.model.Player.position</p>
+<p>private hr.dhruza.model.PlayerColor hr.dhruza.model.Player.color</p>
+<h5>Methods:</h5>
+
+<p>public class java.lang.String getName() </p><p></p>
+<p>public class java.lang.Integer getId() </p><p></p>
+<p>public void writeExternal(java.io.ObjectOutput arg0)<p> throws </p><p>class java.io.IOException</p> </p><p></p>
+<p>public void readExternal(java.io.ObjectInput arg0)<p> throws </p><p>class java.io.IOException</p><p>class java.lang.ClassNotFoundException</p> </p><p></p>
+<p>public class hr.dhruza.model.PlayerColor getColor() </p><p></p>
+<p>public void setPosition(java.lang.Integer arg0) </p><p></p>
+<p>public class java.lang.Integer getPosition() </p><p></p>
+<h5>Constructors:</h5>
+
+<p>public hr.dhruza.model.Player()</p>
+<p>public hr.dhruza.model.Player(java.lang.Integer arg0, java.lang.String arg1, java.lang.Integer arg2,
+    hr.dhruza.model.PlayerColor arg3)</p>
+
+<h3>PlayerColor</h3>
+<p>package hr.dhruza.model</p>
+
+<p>public final</p><p> </p><p>PlayerColor</p><p>
+extends</p><p> </p><p>java.lang.Enum</p><p> </p><p>java.lang.Object</p>
+
+<h5>Fields:</h5>
+<p>public static final hr.dhruza.model.PlayerColor hr.dhruza.model.PlayerColor.RED</p>
+<p>public static final hr.dhruza.model.PlayerColor hr.dhruza.model.PlayerColor.GREEN</p>
+<p>public static final hr.dhruza.model.PlayerColor hr.dhruza.model.PlayerColor.BLUE</p>
+<p>public static final hr.dhruza.model.PlayerColor hr.dhruza.model.PlayerColor.YELLOW</p>
+<p>private final javafx.scene.paint.Color hr.dhruza.model.PlayerColor.colorValue</p>
+<p>private final int hr.dhruza.model.PlayerColor.id</p>
+<p>private static final hr.dhruza.model.PlayerColor[] hr.dhruza.model.PlayerColor.$VALUES</p>
+<h5>Methods:</h5>
+
+<p>public static class [Lhr.dhruza.model.PlayerColor; values() </p><p></p>
+<p>public static class hr.dhruza.model.PlayerColor valueOf(java.lang.String arg0) </p><p></p>
+<p>public int getId() </p><p></p>
+<p>public static class java.util.Optional fromId(int arg0) </p><p></p>
+<p>public class javafx.scene.paint.Color getColorValue() </p><p></p>
+<h5>Constructors:</h5>
+
+<p>private hr.dhruza.model.PlayerColor(java.lang.String arg0, int arg1, javafx.scene.paint.Color arg2, int arg3)</p>
+
+<h3>PlayerCount</h3>
+<p>package hr.dhruza.model</p>
+
+<p>public final</p><p> </p><p>PlayerCount</p><p>
+extends</p><p> </p><p>java.lang.Enum</p><p> </p><p>java.lang.Object</p>
+
+<h5>Fields:</h5>
+<p>public static final hr.dhruza.model.PlayerCount hr.dhruza.model.PlayerCount.TWO</p>
+<p>public static final hr.dhruza.model.PlayerCount hr.dhruza.model.PlayerCount.THREE</p>
+<p>public static final hr.dhruza.model.PlayerCount hr.dhruza.model.PlayerCount.FOUR</p>
+<p>private final java.lang.String hr.dhruza.model.PlayerCount.name</p>
+<p>private final int hr.dhruza.model.PlayerCount.count</p>
+<p>private static final hr.dhruza.model.PlayerCount[] hr.dhruza.model.PlayerCount.$VALUES</p>
+<h5>Methods:</h5>
+
+<p>public static class [Lhr.dhruza.model.PlayerCount; values() </p><p></p>
+<p>public static class hr.dhruza.model.PlayerCount valueOf(java.lang.String arg0) </p><p></p>
+<p>public class java.lang.String getName() </p><p></p>
+<p>public int getCount() </p><p></p>
+<p>public static class java.util.Optional fromName(java.lang.String arg0) </p><p></p>
+<h5>Constructors:</h5>
+
+<p>private hr.dhruza.model.PlayerCount(java.lang.String arg0, int arg1, java.lang.String arg2, int arg3)</p>
+

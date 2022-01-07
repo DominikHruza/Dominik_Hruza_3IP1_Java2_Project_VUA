@@ -49,7 +49,7 @@ public enum GameContext {
     this.activePlayer = activePlayer;
   }
 
-  public int getDieValue() {
+  public Integer getDieValue() {
     return dieValue;
   }
 

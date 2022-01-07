@@ -8,7 +8,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class GameContextSerializable implements Externalizable {
-    private final static Long  serialVersionUID = 1L;
+    private boolean init;
+    private final static Long  serialVersionUID = 2L;
     private PlayerCount playerCount = PlayerCount.TWO;
     private List<Player> players = new ArrayList<>();
     private Player activePlayer;
@@ -43,5 +44,13 @@ public class GameContextSerializable implements Externalizable {
        this.players = (ArrayList<Player>) in.readObject();
        this.activePlayer = (Player) in.readObject();
        this.dieValue = in.readInt();
+    }
+
+    public boolean isInit() {
+        return init;
+    }
+
+    public void setInit(boolean init) {
+        this.init = init;
     }
 }

@@ -47,11 +47,11 @@ public class WingsAndBombsBoardBuilder extends BoardBuilder {
   }
 
   private List<Integer> initBombCellNumbs() {
-    return Arrays.asList(10, 17, 62, 56, 45, 77, 70);
+    return  Arrays.asList(10, 17, 62, 56, 45, 77, 70);
   }
 
   private List<Integer> initWingCellNumbs() {
-    return Arrays.asList(8, 15, 30, 41, 50);
+    return  Arrays.asList(8, 15, 30, 41, 50);
   }
 
   private List<ImageView> initBombImages() {

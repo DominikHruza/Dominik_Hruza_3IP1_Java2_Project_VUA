@@ -42,6 +42,18 @@ public class Player implements Externalizable {
     return color;
   }
 
+  public void setId(Integer id) {
+    this.id = id;
+  }
+
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  public void setColor(PlayerColor color) {
+    this.color = color;
+  }
+
   @Override
   public void writeExternal(ObjectOutput out) throws IOException {
     out.writeInt(id);
